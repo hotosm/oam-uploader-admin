@@ -4,14 +4,14 @@
   "description": "Open aerial map uploader-admin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/developmentseed/project-seed.git"
+    "url": "https://github.com/hotosm/oam-uploader-admin.git"
   },
   "author": {
     "name": "Development Seed",
     "url": "https://developmentseed.org"
   },
   "license": "MIT",
-  "homepage": "https://github.com/hotosm/oam-uploader",
+  "homepage": "https://github.com/hotosm/oam-uploader-admin",
   "scripts": {
     "serve": "gulp serve",
     "build": "gulp",
@@ -46,6 +46,7 @@
     "gulp-util": "^3.0.5",
     "jshint-stylish": "^2.0.0",
     "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
     "node-notifier": "^4.2.1",
     "opn": "^1.0.2",
     "require-globify": "^1.2.1",
