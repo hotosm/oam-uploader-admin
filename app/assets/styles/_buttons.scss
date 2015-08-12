@@ -67,6 +67,22 @@ input[type=submit] {
   color: $base-font-color;
 }
 
+// Base Dark
+.bttn-base-dark,
+.bttn-base-dark:visited,
+.bttn-base-dark:hover {
+  @include bttn-variation($base-font-color);
+  color: #fff;
+}
+
+// Primary
+.bttn-primary,
+.bttn-primary:visited,
+.bttn-primary:hover {
+  @include bttn-variation($primary-color);
+  color: #fff;
+}
+
 .zc-hover {
   background-color: shade(#fff, 8%);
 }
@@ -79,6 +95,7 @@ input[type=submit] {
   line-height: 1.25rem;
   font-size: 0.875rem;
   padding: 0.125rem 0.5rem;
+  min-width: 1.5rem;
 }
 
 // Medium (32px)
@@ -221,4 +238,16 @@ input[type=submit] {
 .bttn-submit {
   @extend .bttn, .bttn-base-light, .bttn-m;
   min-width: 12rem;
+}
+
+.bttn-add {
+  @extend .bttn, .bttn-base-light, .bttn-m, .plus;
+}
+
+.bttn-delete {
+  @extend .bttn, .bttn-base-light, .bttn-s, .plus, .bttn-notxt;
+}
+
+.bttn-edit {
+  @extend .bttn, .bttn-base-light, .bttn-s, .plus, .bttn-notxt;
 }

@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-  background: tint($base-color, 92%);
+  background: tint($base-color, 96%);
   color: $base-font-color;
   font-family: $base-font-family;
   font-weight: $base-font-weight;
@@ -73,11 +73,8 @@ a:active{
 /* SITE HEADER */
 
 .site-header {
-  background: #fff;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
   margin: 0;
-  box-shadow: 0 1px 0 0 $brdr-rgba;
 
   > .inner {
     @extend .row;
@@ -137,10 +134,6 @@ a:active{
   > .inner {
     @extend .row;
     @extend .centered;
-  }
-  @include media(small-up) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 }
 
