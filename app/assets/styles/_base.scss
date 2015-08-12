@@ -156,6 +156,29 @@ a:active{
 
 /* MISC */
 
+.status {
+  position: relative;
+  @extend .antialiased;
+  display: inline-block;
+  background: $base-font-color;
+  color: #fff;
+  border-radius: $global-radius;
+  padding: 0 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 4.5rem;
+  font-weight: $base-font-bold;
+  font-style: normal;
+  &.status-active {
+    background: $secondary-color;
+  }
+  &.status-blocked {
+    background: $alert-color;
+  }
+}
+
 .loading {
   @extend .antialiased;
   position: absolute;

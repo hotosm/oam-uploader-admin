@@ -78,6 +78,21 @@ var Home = React.createClass({
                           </ul>
                         </td>
                       </tr>
+                      <tr>
+                        <td className="cell-status"><em className="status status-active">Active</em></td>
+                        <td className="cell-description">
+                          <strong>120a81d1a235c3512fb85ab4fe67acb4e9cb8b0590789cc034d0da140a4a8ea8</strong>
+                          <p>Token description lorem ipsum dolor sit amet.</p>
+                        </td>
+                        <td className="cell-edit-date">12 Aug, 2015</td>
+                        <td className="cell-expiration-date">18 Sep, 2015</td>
+                        <td className="cell-actions">
+                          <ul className="table-actions-list" role="toolbar">
+                            <li><button type="button" title="Delete token" className="bttn-delete"><span>Delete</span></button></li>
+                            <li><button type="button" title="Edit token" className="bttn-edit"><span>Edit</span></button></li>
+                          </ul>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
