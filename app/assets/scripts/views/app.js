@@ -47,7 +47,7 @@ var App = React.createClass({
     AppActions.showNotification('success', 'Sad to see you go!');
     setTimeout(function() {
       AppActions.clearNotification();
-    }, 2000)
+    }, 4000)
   },
 
   renderUserInfo: function() {

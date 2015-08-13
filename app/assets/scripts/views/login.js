@@ -39,7 +39,7 @@ var Login = React.createClass({
     AppActions.showNotification('success', 'Welcome back!');
     setTimeout(function() {
       AppActions.clearNotification();
-    }, 2000)
+    }, 4000)
     this.transitionTo('home');
   },
 
