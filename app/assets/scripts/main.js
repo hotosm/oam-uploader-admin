@@ -1,4 +1,7 @@
 'use strict';
+var config = require('./config');
+console.log.apply(console, config.consoleMessage);
+
 var React = require('react/addons');
 var Router = require('react-router');
 var Route = Router.Route;

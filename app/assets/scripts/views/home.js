@@ -1,7 +1,19 @@
 'use strict';
 var React = require('react/addons');
+var Router = require('react-router');
+var UserStore = require('../stores/user-store');
 
 var Home = React.createClass({
+  mixins: [
+    Router.Navigation
+  ],
+
+  componentWillMount: function() {
+    if (!UserStore.isLogged()) {
+      this.transitionTo('login');
+    }
+  },
+
   render: function() {
     return (
       <section className="panel manager-panel">

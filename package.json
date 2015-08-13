@@ -13,10 +13,17 @@
   "license": "MIT",
   "homepage": "https://github.com/hotosm/oam-uploader-admin",
   "scripts": {
+    "postinstall": "[ -f app/assets/scripts/config/local.js ] || echo 'module.exports = {};' > app/assets/scripts/config/local.js",
     "serve": "gulp serve",
     "build": "gulp",
     "lint": "semistandard app/assets/scripts/**/*.js",
     "test": "echo NO TESTS YET"
+  },
+  "browserify": {
+    "transform": [
+      "require-globify",
+      "envify"
+    ]
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.0",
@@ -58,7 +65,9 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
+    "jquery": "^2.1.4",
     "react": "^0.13.3",
-    "react-router": "^0.13.3"
+    "react-router": "^0.13.3",
+    "reflux": "^0.2.12"
   }
 }

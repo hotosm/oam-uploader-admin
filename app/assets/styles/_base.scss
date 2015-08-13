@@ -69,8 +69,14 @@ a:active{
   margin-right: auto;
 }
 
+
 /* SITE CANVAS */
-.site-canvas {
+
+.site-canvas, .site-canvas > div {
+  height: 100%;
+}
+
+.inner-wrapper {
   .page-signin & {
     position: relative;
     top: 50%;
@@ -311,7 +317,17 @@ a:active{
   }
 }
 
+/* Keyframes animations */
+
 @include keyframes(spin-c) {
   from { @include transform(rotate(0deg)); }
     to { @include transform(rotate(360deg)); }
+}
+
+@include keyframes(bounce-x) {
+  0% { @include transform(translateX(0)); }
+  25% { @include transform(translateX(0.5rem)); }
+  50% { @include transform(translateX(-0.5rem)); }
+  75% { @include transform(translateX(0.25rem)); }
+  100% { @include transform(translateX(0)); }
 }

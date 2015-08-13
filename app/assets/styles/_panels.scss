@@ -76,7 +76,12 @@
   label {
     @extend .visually-hidden;
   }
+
   .form-control {
     @extend .input-l;
+  }
+
+  &.form-says-no {
+    @include animation(bounce-x 0.25s ease-in-out 0s);
   }
 }
