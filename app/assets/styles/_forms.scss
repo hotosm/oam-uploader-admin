@@ -37,9 +37,7 @@ select.form-control {
 }
 
 .form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control,
-fieldset[readonly] .form-control {
+fieldset[disabled] .form-control {
   @extend .disabled;
 }
 
