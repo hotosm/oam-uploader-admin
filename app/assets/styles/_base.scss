@@ -87,22 +87,21 @@ a:active{
 }
 
 .site-title {
-  display: inline-block;;
   position: relative;
   margin: 0;
+  * {
+    vertical-align: top;
+  }
   img {
-    display: block;
+    display: inline-block;
   }
   span {
     @extend .visually-hidden;
   }
   small {
     @extend .antialiased;
-    display: block;
-    position: absolute;
-    top: 0.45rem;
-    right: -0.5rem;
-    @include transform(translate(100%, 0));
+    display: inline-block;
+    margin: 0.45rem 0 0 0.5rem;
     background: rgba($base-color, 0.64);
     color: #fff;
     border-radius: $global-radius;
