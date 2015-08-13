@@ -4,6 +4,7 @@ var logo = require('./logo');
  */
 module.exports = {
   environment: 'production',
-  consoleMessage: logo
+  consoleMessage: logo,
+  OAMUploaderApi: ''
 };
 
