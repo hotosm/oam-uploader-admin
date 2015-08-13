@@ -77,10 +77,12 @@ a:active{
 }
 
 .inner-wrapper {
+  @include animation(main-animate 0.8s ease 0s 1);
   .page-signin & {
     position: relative;
     top: 50%;
-    transform: translate(0, -64%);
+    @include transform(translate3d(0, -64%, 0));
+    @include animation(signin-animate 0.8s ease 0s 1);
   }
 }
 
@@ -330,4 +332,26 @@ a:active{
   50% { @include transform(translateX(-0.5rem)); }
   75% { @include transform(translateX(0.25rem)); }
   100% { @include transform(translateX(0)); }
+}
+
+@include keyframes(signin-animate) {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0, 0, 0));
+  }
+  to {
+    opacity: 1;
+    @include transform(translate3d(0, -64%, 0));
+  }
+}
+
+@include keyframes(main-animate) {
+  from {
+    opacity: 0;
+    @include transform(translate3d(0, -56%, 0));
+  }
+  to {
+    opacity: 1;
+    @include transform(translate3d(0, 0, 0));
+  }
 }

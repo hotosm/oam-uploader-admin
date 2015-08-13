@@ -98,8 +98,9 @@
 
 .tokens-table {
   margin-bottom: 0;
+  table-layout: fixed;
   td, th {
-    break-word: word-wrap;
+    word-wrap: break-word;
   }
   th:not(.th-edit-date),
   th:not(.th-expiration-date),
@@ -112,9 +113,21 @@
   .th-actions span {
     @extend .visually-hidden;
   }
+  .th-status {
+    width: 8rem;
+  }
+  .th-description {
+    width: auto;
+  }
+  .th-edit-date,
+  .th-expiration-date {
+    width: 8rem;
+  }
+  .th-actions {
+    width: 6rem;
+  }
   .cell-description {
     strong {
-      word-break: break-all;
       font-weight: $base-font-regular;
     }
     p {

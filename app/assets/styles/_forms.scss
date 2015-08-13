@@ -36,12 +36,13 @@ select.form-control {
   cursor: pointer;
 }
 
-.form-control[disabled]
+.form-control[disabled],
 fieldset[disabled] .form-control {
   @extend .disabled;
 }
 
-.form-control[readonly] {
+.form-control[readonly],
+fieldset[readonly] .form-control {
   cursor: text;
   opacity: 0.64;
 }
