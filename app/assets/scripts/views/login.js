@@ -50,7 +50,7 @@ var Login = React.createClass({
     // Remove error class.
     node.className = node.className.replace(/ ?form-says-no/, '');
     // Add it back on next tick.
-    setTimeout(function() { node.className += ' form-says-no'; }, 1);
+    setTimeout(function() { node.className += ' form-says-no'; }, 10);
   },
 
   render: function() {
