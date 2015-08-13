@@ -66,3 +66,14 @@
 .panel-tabular-data {
   margin: -1rem;
 }
+
+// SIGIN PANEL
+.signin-panel {
+  @include span-columns(4 of 12);
+  @include shift(4);
+  text-align: center;
+
+  label {
+    @extend .visually-hidden;
+  }
+}
