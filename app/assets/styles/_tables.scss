@@ -61,14 +61,14 @@
         margin-left: 0.25rem;
       }
       &.sort-none:after {
-        @extend .icon-sort;
+        @extend .collecticon-sort;
       }
       &.sort-asc:after {
-        @extend .icon-sort-asc;
+        @extend .collecticon-sort-asc;
         
       }
       &.sort-desc:after {
-        @extend .icon-sort-desc;
+        @extend .collecticon-sort-desc;
       }
     }
     a, a:visited, a:hover {
@@ -86,7 +86,7 @@
   }
   > * {
     display: inline-block;
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
 
     &:first-child {
       margin-left: 0;

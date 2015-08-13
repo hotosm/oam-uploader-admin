@@ -22,6 +22,7 @@
     "autoprefixer-core": "^5.2.0",
     "browser-sync": "^2.7.6",
     "browserify": "^10.2.3",
+    "collecticons-processor": "^1.0.2",
     "del": "^1.2.0",
     "envify": "^3.4.0",
     "gulp": "^3.9.0",
@@ -49,12 +50,12 @@
     "node-neat": "^1.7.2",
     "node-notifier": "^4.2.1",
     "opn": "^1.0.2",
+    "reactify": "^1.1.1",
     "require-globify": "^1.2.1",
     "semistandard": "^5.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.1",
-    "reactify": "^1.1.1"
+    "watchify": "^3.2.1"
   },
   "dependencies": {
     "react": "^0.13.3",
