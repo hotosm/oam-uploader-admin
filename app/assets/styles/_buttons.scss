@@ -245,3 +245,7 @@ input[type=submit] {
 .bttn-edit {
   @extend .bttn, .bttn-base-light, .bttn-s, .edit, .bttn-notxt;
 }
+
+.bttn-signout {
+  @extend .bttn, .bttn-base-light, .bttn-s;
+}

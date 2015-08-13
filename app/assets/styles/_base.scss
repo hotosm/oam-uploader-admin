@@ -82,6 +82,10 @@ a:active{
   }
 }
 
+.site-headline {
+  text-align: center;
+}
+
 .site-title {
   display: inline-block;;
   position: relative;
@@ -111,6 +115,7 @@ a:active{
 
 .site-intro {
   @extend .prose;
+  text-align: center;
   margin-top: 1rem;
 
   @include media(medium-up) {

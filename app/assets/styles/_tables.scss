@@ -57,11 +57,10 @@
       display: inline-block;
       &.sort:after {
         font-size: 1rem;
-        color: tint($primary-color, 20%);
         margin-left: 0.25rem;
       }
       &.sort-none:after {
-        @extend .collecticon-sort;
+        @extend .collecticon-sort-none;
       }
       &.sort-asc:after {
         @extend .collecticon-sort-asc;

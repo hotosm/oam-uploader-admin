@@ -40,10 +40,10 @@ var Home = React.createClass({
                   <table className="table tokens-table">
                     <thead className="tokens-table-header">
                       <tr>
-                        <th className="th-status"><a href="#" title="Sort by status" className="sort">Status</a></th>
+                        <th className="th-status"><a href="#" title="Sort by status" className="sort sort-none">Status</a></th>
                         <th className="th-description">Key</th>
-                        <th className="th-edit-date"><a href="" title="Sort by edit date" className="sort">Last update</a></th>
-                        <th className="th-expiration-date"><a href="" title="Sort by expiration date" className="sort">Expiration</a></th>
+                        <th className="th-edit-date"><a href="" title="Sort by edit date" className="sort sort-desc">Last update</a></th>
+                        <th className="th-expiration-date"><a href="" title="Sort by expiration date" className="sort sort-none">Expiration</a></th>
                         <th className="th-actions"><span>Actions</span></th>
                       </tr>
                     </thead>
