@@ -102,11 +102,6 @@
   td, th {
     word-wrap: break-word;
   }
-  th:not(.th-edit-date),
-  th:not(.th-expiration-date),
-  td:not(.cell-description) {
-    white-space: nowrap;
-  }
   tr:hover {
     background: rgba(#fff, 0.32);
   }
@@ -121,7 +116,7 @@
   }
   .th-edit-date,
   .th-expiration-date {
-    width: 8rem;
+    width: 10rem;
   }
   .th-actions {
     width: 6rem;
