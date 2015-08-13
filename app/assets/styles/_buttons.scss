@@ -12,6 +12,7 @@ input[type=submit] {
 }
 
 .bttn {
+  @include user-select(none);
   display: inline-block;
   font-family: $base-font-family;
   font-weight: $base-font-bold;
@@ -21,7 +22,6 @@ input[type=submit] {
   border-radius: $global-radius;
   border: 0;
   background-image: none;
-  @include user-select(none);
   line-height: 1.5rem;
   font-size: 0.875rem;
   padding: 0.25rem 0.75rem;
@@ -33,7 +33,6 @@ input[type=submit] {
   &.active {
     box-shadow: inset 0 2px 0 0 rgba($base-color, 0.12), 0 0 0 1px rgba($base-color, 0.24), 0 1px 2px 0 rgba($base-color, 0.24);
     outline: none;
-    color: #fff;
     @include transform(translate(0));
   }
   &:hover {
@@ -61,31 +60,25 @@ input[type=submit] {
 
 // Base Light
 .bttn-base-light,
-.bttn-base-light:visited,
-.bttn-base-light:hover {
+.bttn-base-light:visited {
   @include bttn-variation(#fff);
   color: $base-font-color;
 }
 
 // Base Dark
 .bttn-base-dark,
-.bttn-base-dark:visited,
-.bttn-base-dark:hover {
+.bttn-base-dark:visited {
   @include bttn-variation($base-font-color);
   color: #fff;
 }
 
 // Primary
 .bttn-primary,
-.bttn-primary:visited,
-.bttn-primary:hover {
+.bttn-primary:visited {
   @include bttn-variation($primary-color);
   color: #fff;
 }
 
-.zc-hover {
-  background-color: shade(#fff, 8%);
-}
 
 // SIZES
 
