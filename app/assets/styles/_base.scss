@@ -69,13 +69,21 @@ a:active{
   margin-right: auto;
 }
 
+/* SITE CANVAS */
+.site-canvas {
+  .page-signin & {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -64%);
+  }
+}
+
 
 /* SITE HEADER */
 
 .site-header {
   padding-top: 2rem;
   margin: 0;
-
   > .inner {
     @extend .row;
     @extend .centered;
@@ -84,6 +92,10 @@ a:active{
 
 .site-headline {
   float: left;
+  .page-signin & {
+    float: none;
+    text-align: center;
+  }
 }
 
 .site-title {
