@@ -305,3 +305,15 @@ input[type=radio] {
   background: none;
   border: none;
 }
+
+
+// EDIT/CREATE FORM
+
+.form-edit,
+.form-create {
+  .form-actions {
+    > * {
+      margin-right: 0.5rem;
+    }
+  }
+}
