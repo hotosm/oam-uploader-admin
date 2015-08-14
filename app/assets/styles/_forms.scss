@@ -262,6 +262,12 @@ input[type=radio] {
     @include span-columns(6 of 8);
     @include shift(2);
   }
+  > * {
+    margin-right: 0.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .form-horizontal .form-options-set {
@@ -304,16 +310,4 @@ input[type=radio] {
 .bttn-add-scene {
   background: none;
   border: none;
-}
-
-
-// EDIT/CREATE FORM
-
-.form-edit,
-.form-create {
-  .form-actions {
-    > * {
-      margin-right: 0.5rem;
-    }
-  }
 }
