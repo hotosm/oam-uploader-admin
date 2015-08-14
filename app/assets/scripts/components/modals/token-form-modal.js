@@ -9,7 +9,7 @@ var TokenFormModal = React.createClass({
   getHeader: function() {
     return (
       <h1 className="modal-title">
-        {this.props.action === 'create' ? 'New token' : 'Edit token' + this.props.data._id}
+        {this.props.action === 'create' ? 'Create token' : 'Edit token'}
       </h1>
     );
   },
