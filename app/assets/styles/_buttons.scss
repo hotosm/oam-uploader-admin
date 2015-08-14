@@ -252,8 +252,10 @@ input[type=submit] {
 
 .bttn-save {
   @extend .bttn, .bttn-base-dark, .bttn-m;
+  min-width: 6rem;
 }
 
 .bttn-cancel {
   @extend .bttn, .bttn-base-light, .bttn-m;
+  min-width: 6rem;
 }
