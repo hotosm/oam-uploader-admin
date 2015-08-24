@@ -262,6 +262,12 @@ input[type=radio] {
     @include span-columns(6 of 8);
     @include shift(2);
   }
+  > * {
+    margin-right: 0.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .form-horizontal .form-options-set {

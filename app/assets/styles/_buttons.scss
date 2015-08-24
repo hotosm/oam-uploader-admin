@@ -79,6 +79,13 @@ input[type=submit] {
   color: #fff;
 }
 
+// Secondary
+.bttn-secondary,
+.bttn-secondary:visited {
+  @include bttn-variation($secondary-color);
+  color: #fff;
+}
+
 
 // SIZES
 
@@ -241,4 +248,14 @@ input[type=submit] {
 
 .bttn-signout {
   @extend .bttn, .bttn-base-light, .bttn-s;
+}
+
+.bttn-save {
+  @extend .bttn, .bttn-base-dark, .bttn-m;
+  min-width: 6rem;
+}
+
+.bttn-cancel {
+  @extend .bttn, .bttn-base-light, .bttn-m;
+  min-width: 6rem;
 }

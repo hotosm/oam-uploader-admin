@@ -155,7 +155,7 @@ var Home = React.createClass({
         <header className="panel-header">
           <div className="panel-headline">
             <h1 className="panel-title">Tokens</h1>
-            <p className="panel-subtitle">4 entries</p>
+            <p className="panel-subtitle"># entries</p>
           </div>
           <div className="panel-tools">
             <ul className="panel-tools-list" role="toolbar">

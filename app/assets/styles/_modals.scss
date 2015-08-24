@@ -121,7 +121,7 @@ $modal-padding: 1rem;
   }
   &-title {
     margin: 0;
-    @include heading(1rem);
+    @include heading(1.25rem);
     @extend .truncated;
     .alt {
       display: block;
