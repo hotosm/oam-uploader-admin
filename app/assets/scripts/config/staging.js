@@ -4,8 +4,8 @@
 
 // set staging-specific options here.
 module.exports = {
-  environment: 'staging'
-
+  environment: 'staging',
+  OAMUploaderApi: 'http://52.11.15.48/'
 };
 
 // copy over any production settings that weren't specifically set above
