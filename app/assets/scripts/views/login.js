@@ -37,9 +37,7 @@ var Login = React.createClass({
   onLoginSuccess: function() {
     // Login successful.
     AppActions.showNotification('success', 'Welcome back!');
-    setTimeout(function() {
-      AppActions.clearNotification();
-    }, 4000)
+    AppActions.clearNotification(4000);
     this.transitionTo('home');
   },
 

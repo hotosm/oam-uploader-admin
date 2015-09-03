@@ -13,6 +13,7 @@ var App = React.createClass({
   mixins: [
     Reflux.listenTo(AppActions.showNotification, 'onNotificationShow'),
     Reflux.listenTo(AppActions.clearNotification, 'dismissNotification'),
+    Reflux.listenTo(AppActions.clearNotificationAfter, 'dismissNotification'),
 
     Reflux.listenTo(UserActions.userLogout.completed, 'onLogoutSuccess'),
     Router.Navigation,
@@ -31,10 +32,16 @@ var App = React.createClass({
     });
   },
 
-  dismissNotification: function() {
-    this.setState({
-      notification: { type: null, message: null }
-    });
+  dismissNotification: function(time) {
+    if (!time) {
+      time = 0;
+    }
+
+    setTimeout(function() {
+      this.setState({
+        notification: { type: null, message: null }
+      });
+    }.bind(this), time);
   },
 
   logout: function(e) {
