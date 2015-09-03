@@ -55,6 +55,7 @@ $modal-padding: 1rem;
 }
 
 // For the animation.
+.modal-appear,
 .modal-enter {
   @include transform(translate3d(0, 0, 0));
   @include transition(opacity 0.32s ease 0s, visibility 0.32s linear 0s);
@@ -70,6 +71,7 @@ $modal-padding: 1rem;
     visibility: hidden;
   }
   
+  &.modal-appear-active,
   &.modal-enter-active {
     opacity: 1;
     visibility: visible;

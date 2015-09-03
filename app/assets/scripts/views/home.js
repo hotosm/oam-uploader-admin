@@ -7,6 +7,7 @@ var TokenStore = require('../stores/token-store');
 var AppActions = require('../actions/app-actions');
 var TokenActions = require('../actions/token-actions');
 var TokenFormModal = require('../components/modals/token-form-modal');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var Home = React.createClass({
   mixins: [
@@ -98,8 +99,8 @@ var Home = React.createClass({
               <tr>
                 <th className="th-status"><a href="#" title="Sort by status" className="sort sort-none">Status</a></th>
                 <th className="th-description">Key</th>
-                <th className="th-edit-date"><a href="" title="Sort by edit date" className="sort sort-desc">Last update</a></th>
-                <th className="th-expiration-date"><a href="" title="Sort by expiration date" className="sort sort-none">Expiration</a></th>
+                <th className="th-edit-date"><a href="#" title="Sort by edit date" className="sort sort-desc">Last update</a></th>
+                <th className="th-expiration-date"><a href="#" title="Sort by expiration date" className="sort sort-none">Expiration</a></th>
                 <th className="th-actions"><span>Actions</span></th>
               </tr>
             </thead>
@@ -121,8 +122,8 @@ var Home = React.createClass({
           <strong>{data.token}</strong>
           <p>{data.name}</p>
         </td>
-        <td className="cell-edit-date">{data.updated || data.created}</td>
-        <td className="cell-expiration-date">{data.expiration}</td>
+        <td className="cell-edit-date">{this.formatDate(data.updated || data.created)}</td>
+        <td className="cell-expiration-date">{this.formatDate(data.expiration)}</td>
         <td className="cell-actions">
           <ul className="table-actions-list" role="toolbar">
             <li><button type="button" title="Delete token" className="bttn-delete" onClick={this.deleteToken.bind(null, data._id)}><span>Delete</span></button></li>
@@ -134,15 +135,27 @@ var Home = React.createClass({
   },
 
   renderFormModal: function() {
-    if (this.state.formModal.action === null) {
-      return null;
+    var modal = null;
+
+    if (this.state.formModal.action !== null) {
+      var data =  this.state.formModal.action === 'edit' ? 
+        this.state.formModal.data : 
+        { token: '', name: '', expiration: false, status: 'active' };
+
+      modal = (
+        <TokenFormModal 
+          onCloseClick={this.formModalDismiss}
+          revealed={true}
+          action={this.state.formModal.action}
+          data={data} />
+      );
     }
-
-    var data =  this.state.formModal.action === 'edit' ? 
-      this.state.formModal.data : 
-      { token: '', name: '', expiration: '', status: 'active' };
-
-    return (<TokenFormModal onCloseClick={this.formModalDismiss} revealed={true} action={this.state.formModal.action} data={data} />);
+  
+    return (
+      <ReactCSSTransitionGroup component="div" transitionName="modal" transitionAppear={true}>
+        {modal}
+      </ReactCSSTransitionGroup>
+    );
   },
 
   render: function() {
@@ -155,7 +168,7 @@ var Home = React.createClass({
         <header className="panel-header">
           <div className="panel-headline">
             <h1 className="panel-title">Tokens</h1>
-            <p className="panel-subtitle"># entries</p>
+            <p className="panel-subtitle">{this.state.tokens.length} entries</p>
           </div>
           <div className="panel-tools">
             <ul className="panel-tools-list" role="toolbar">
@@ -172,8 +185,25 @@ var Home = React.createClass({
         </footer>
 
         {this.renderFormModal()}
+
       </section>
     );
+  },
+
+  formatDate: function(date) {
+    if (date === null || date === false) {
+      return '--';
+    }
+    else {
+      var d = new Date(date);
+      var dt = d.getFullYear() + '-' + this.lt10pad(d.getMonth() + 1) + '-' + this.lt10pad(d.getDate());
+      var time = this.lt10pad(d.getHours()) + ':' + this.lt10pad(d.getMinutes()) + ':' + this.lt10pad(d.getSeconds());
+      return dt + ' ' + time;
+    }
+  },
+
+  lt10pad: function(val) {
+    return val < 10 ? '0' + val : val;
   }
 });
 

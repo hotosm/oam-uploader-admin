@@ -65,10 +65,13 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
+    "joi": "^6.6.1",
     "jquery": "^2.1.4",
     "react": "^0.13.3",
     "react-keybinding": "^2.0.0",
     "react-router": "^0.13.3",
+    "react-validation-mixin": "^4.2.0",
+    "react-widgets": "^2.8.0",
     "reflux": "^0.2.12"
   }
 }

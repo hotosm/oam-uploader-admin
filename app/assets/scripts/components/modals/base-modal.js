@@ -27,7 +27,9 @@ var BModal = React.createClass({
 
   keybindings: {
     'esc': function() {
-      this.setState({ revealed: false });
+      if (this.props.onCloseClick !== false) {
+        this.props.onCloseClick.call(this);
+      }
     }
   },
 
@@ -50,6 +52,7 @@ var BModal = React.createClass({
       footer: null,
 
       revealed: false,
+      animation: true,
 
       onOverlayClick: function(e) {
         // Prevent children from triggering this.
@@ -115,11 +118,17 @@ var BModal = React.createClass({
       );
     }
 
-    return (
-      <ReactCSSTransitionGroup component="div" transitionName="modal">
-        {modal}
-      </ReactCSSTransitionGroup>
-    );
+    if (this.props.animation) {
+      return (
+        <ReactCSSTransitionGroup component="div" transitionName="modal">
+          {modal}
+        </ReactCSSTransitionGroup>
+      );
+    }
+    else {
+      return modal;
+    }
+
   }
 });
 
