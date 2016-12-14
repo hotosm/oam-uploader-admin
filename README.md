@@ -1,19 +1,42 @@
-# Oam uploader admin
+<h1 align="center">Token Manager</h1>
 
-Oam uploader admin
+<div align="center">
+  <h3>
+  <a href="https://docs.openaerialmap.org/ecosystem/getting-started">Ecosystem</a>
+  <span> | </span>
+  <a href="https://github.com/hotosm/oam-uploader-api">Uploader API</a>
+  <span> | </span>
+  <a href="https://github.com/hotosm/oam-uploader">Uploader Interface</a>
+  </h3>
+</div>
+
+The Token Manager allows maintainers to issue authorization tokens used in the [Uploader Form](https://github.com/hotosm/oam-uploader). This web application requires the [Uploader API](https://github.com/hotosm/oam-uploader-api) to be running. Before proceeding, we suggest you read the ecosystem docs.
 
 ## Development environment
 To set up the development environment for this website, you'll need to install the following on your system:
 
-- [Node and npm](http://nodejs.org/)
-- Gulp ( $ npm install -g gulp )
+- [Node](http://nodejs.org/) v4 (To manage multiple node versions we recommend [nvm](https://github.com/creationix/nvm))
+- Gulp (`$ npm install -g gulp`)
 
 After these basic requirements are met, run the following commands in the website's folder:
+
 ```
 $ npm install
 ```
 
 ### Getting started
+
+#### Environment variables
+You have to set the location of the Uploader API before starting the web application. 
+In `app/assets/scripts/config/local.js` set the location of the API and port. For example:
+
+``` 
+module.exports = {
+  OAMUploaderApi: 'http://localhost:4000'
+};
+``` 
+
+#### Starting the app
 
 ```
 $ gulp collecticons
@@ -25,7 +48,9 @@ The site will automatically refresh since it is bundled with livereload.
 NOTE: To save time collecticons are not compiled by the serve command.
 
 ### Other commands
-Compile the sass files, javascript, collecticons... Use this instead of ```gulp serve``` if you don't want to watch.
+
+Compile the sass files, javascript, collecticons... Use this instead of `gulp serve` if you don't want to launch the live reloader.
+
 ```
 $ gulp
 ```
