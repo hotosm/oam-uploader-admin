@@ -20,7 +20,7 @@ cache:
 before_install:
 - chmod +x ./.build_scripts/deploy.sh
 before_script:
-- npm run lint
+#- npm run lint
 - npm test
 script:
 - npm run build
