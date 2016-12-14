@@ -3,16 +3,30 @@ node_js:
 - '0.12'
 env:
   global:
-  - GH_REF=github.com/hotosm/oam-uploader-admin.git
+  - CXX=g++-4.8
   - DEPLOY_BRANCH=master
   - DS_ENV=production
-  - secure: nxqthN76nuNaSRkHAPcgsl9s/PF32wJgYcwQK2/qEb3FTQFw5XKUiyh6Q7/Y9n+W1j1s/1F4DUbaxOZxj5xvoi7pA/cYObQhMIszCjVjXpwQEXuTWHVE3agu6Sm2pVm79hXKaIkiBGu2Gjl1FXYGRTGje0jQXseJgvFhNUwbl6QZw45/hLoBixsm8wLuvgsl5tQ7qLydWmRgEfT0czPaVxSqiYzn8JlpQSzRj7ore6lDNJ5v15GS2IGKoV5Zf2Q8zNwefzTdQacRkb8YVhNbBUPnzJYUod6QMoEmI8xTkOSmMGeb9jD0vKurQo0uxYUbvv/BLOqqPk1zGfWGQ0FdVKi2R0PFAZ62QlrolnYPPZQz9cZaY0OoR8Q9wyVndGPRHv8INjAQOaW+HAc54rIEPZyC+SO6tvWM1Nb2ShgEYbdhyCCbOGvpFvvutCdL4n9SCRMMqI4Mqmjs8VLNu9pC6OOIE3T6RWQ6nw3rJ0h/LzLYDdeq1DLThinhpM14A0JQfE/hBfS3XO89/dNBZAfSFDpNpsTFVxA8JvJxReqjztjZL5kDBL896a3qZnet/X2iTLTj/mMtsvjRb0YGWUDUUHaYEdQal70REJOqaC6BlUVjkGfn2R3IUR8rmnewlU3Q5mR8XSw4rLSEFcfOuw19NSn3Fkj/74tW1LJ+ytPK4Tw=
+  - secure: "gjcepSwSJC7GbC4cn8nN736Sg37dnjjJCke5tFcLPUgNXcnEmo+3C8ucxquX2+kzbP03hk/NAFGhzC+lFVV63tZydrV3y7aXV0wV7mEcXYhOsMXNC8fdutE2duVtXPPDjHq+VVOmAUE6DyvIsS2xqTkUuAV1jkx/YFsRfazGdE8qUVggkYkGtjUXiEtIwCHVEc3xm2BdQ0l4YWAiVooOpVMCfSeZY34GqzL5zeLCori97FmXP5tceRvSIEGXvEuWg/YbPMDpzUXnSrUpo79kg1VuSXJI12f8238CDuAvGo5wMaGnNN1wjOuq+rM6Q0+/qmhG6jusmAU1UeIVwkODzavoPdQgnD5C+LGEqGDvp9ihktjE7TvsdAM2RxNdQ73SIzxoTHX9rUXvB+qHSfGF8jv/DK8nlEYdFj0MzkHkATSLcpZZ8hh7uTeMs1gHA3DKIEFgXCakdB1ONnSpRIkq4+A1oXs4Zm3sRSUw//wu1h87A4soVD49o6tqwa3dDXgzYvt/nOzxiquRqWx177nOStLYtCRTMuGkE1tOL5t0ktUJ/Lm2RoszAqL1xtLvc+NXYP20FdW2tQ41EJez8rlQW36k3DmqJNhEKOPuhyqQ5zu5HMZfeGHT46WNJNdHv6cmXjykZLXRhh8EzKM4a4lsm1bTFjH2mfQfY3p42tkFijk="
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
 cache:
+  apt: true
   directories:
   - node_modules
 before_install:
 - chmod +x ./.build_scripts/deploy.sh
+before_script:
+- npm run lint
+- npm test
 script:
 - npm run build
-after_success:
-- "./.build_scripts/deploy.sh"
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ".build_scripts/deploy.sh"
+  on:
+    branch: "${DEPLOY_BRANCH}"
