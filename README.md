@@ -15,7 +15,7 @@ The Token Manager allows maintainers to issue authorization tokens used in the [
 
 ## Installation and Usage
 
-The steps below will walk you through setting up your own instance of the oam-uploader-api.
+The steps below will walk you through setting up your own instance of the oam-uploader-admin.
 
 ### Install Project Dependencies
 To set up the development environment for this website, you'll need to install the following on your system:
