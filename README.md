@@ -69,10 +69,6 @@ Compiles the sass files, javascript, and launches the server making the site ava
 The system will watch files and execute tasks whenever one of them changes.
 The site will automatically refresh since it is bundled with livereload.
 
-## License
-Oam Uploader Admin is licensed under **BSD 3-Clause License**, see the [LICENSE](LICENSE) file for more details.
-
-
 # Deployment
 To prepare the app for deployment run:
 
@@ -81,3 +77,6 @@ npm run build
 ```
 This will package the app and place all the contents in the `dist` directory.
 The app can then be run by any web server.
+
+# License
+Oam Uploader Admin is licensed under **BSD 3-Clause License**, see the [LICENSE](LICENSE) file for more details.
