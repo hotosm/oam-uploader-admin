@@ -21,7 +21,6 @@ The steps below will walk you through setting up your own instance of the oam-up
 To set up the development environment for this website, you'll need to install the following on your system:
 
 - [Node](http://nodejs.org/) v4 (To manage multiple node versions we recommend [nvm](https://github.com/creationix/nvm))
-- Gulp (`$ npm install -g gulp`)
 
 ### Install Application Dependencies
 
