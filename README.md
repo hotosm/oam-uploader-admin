@@ -1,3 +1,5 @@
+No longer being maintained. See https://github.com/hotosm/oam-api.
+
 <h1 align="center">Token Manager</h1>
 
 <div align="center">
